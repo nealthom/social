@@ -1,30 +1,36 @@
-require ('dotenv').config(); // import environment variables
+require('dotenv').config(); // import environment variables
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+const users = require('./routes/api/users');
+const profile = require('./routes/api/profile');
+const posts = require('./routes/api/posts');
+
 // config express
-const app = express()
-app.use(bodyParser.urlencoded({extended:true}));
+const app = express();
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // config DB
 const db = process.env.mongoURI;
 
 // connect to mongo DB
-mongoose.connect(db,{useNewUrlParser: true})
-    .then(()=> console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
-
-
+// Use Routes
+app.use('/api/users', users);
+app.use('/api/profile', profile);
+app.use('/api/posts', posts);
 
 const port = process.env.Port || 5000;
 
-app.get('/',(req,res)=>{
-    res.send('Hello World');
-});
-
-
-app.listen(port,()=>console.log(`Server running on ${port}`));
+app.listen(port, () => console.log(`Server running on ${port}`));
