@@ -16,8 +16,7 @@ const ProfileSchema = new Schema({
     type: String
   },
   topics: {
-    type: [String],
-    required: true
+    type: [String]
   },
   bio: {
     type: String
