@@ -10,11 +10,59 @@ const Profile = require('../../models/Profile');
 // Load User Model
 const User = require('../../models/User');
 
-// @route    Get api/profile/test
-// @desc     Tests profile route
+// @route    Get api/profile/all
+// @desc     Get all profiles
 // @access   Public
-router.get('/test', (req, res) => {
-  res.json({ msg: 'Profile works' });
+router.get('/all', async (req, res) => {
+  try {
+    const errors = {};
+    const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+    if (!profiles) {
+      errors.noprofile = 'There are no profiles';
+      return res.status(404).json(errors);
+    }
+    res.json(profiles);
+  } catch (error) {
+    res.status(404).json({ profile: 'There are no profiles' });
+  }
+});
+
+// @route    Get api/profile/handle/:handle
+// @desc     Get profile by handle
+// @access   Public
+router.get('/handle/:handle', async (req, res) => {
+  const errors = {};
+  try {
+    const profile = await Profile.findOne({
+      handle: req.params.handle
+    }).populate('user', ['name', 'avatar']);
+    if (!profile) {
+      errors.noprofile = 'There is no profile for this user';
+      res.status(404).json(errors);
+    }
+    res.json(profile);
+  } catch (error) {
+    res.status(404).json(error);
+  }
+});
+
+// @route    Get api/profile/user/:user_id
+// @desc     Get profile by user ID
+// @access   Public
+router.get('/user/:user_id', async (req, res) => {
+  const errors = {};
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id
+    }).populate('user', ['name', 'avatar']);
+    if (!profile) {
+      errors.noprofile = 'There is no profile for this user';
+      res.status(404).json(errors);
+    }
+    res.json(profile);
+  } catch (error) {
+    res.status(404).json({ profile: 'There is no profile for this user' });
+  }
 });
 
 // @route    Get api/profile
