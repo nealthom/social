@@ -81,4 +81,32 @@ router.delete(
   }
 );
 
+// @route    Post api/posts/like/:id
+// @desc     Like post
+// @access   Private
+// Work  here -- allows for multiple likes from one person
+router.post(
+  '/like/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+      const index = post.likes.findIndex(like => like.user === req.user.id);
+      if (index === -1) {
+        post.likes.push({ user: req.user.id });
+      } else {
+        return res
+          .status(400)
+          .json({ alreadyliked: 'User already liked this post' });
+      }
+      // Add user id to likes array
+      post.likes.push({ user: req.user.id });
+      await post.save();
+      res.json(post);
+    } catch (error) {
+      res.status(404).json({ postnotfound: 'No post found' });
+    }
+  }
+);
+
 module.exports = router;
