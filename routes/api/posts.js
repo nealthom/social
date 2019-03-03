@@ -185,7 +185,8 @@ router.delete(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     // Get the post
-    const post = await Post.findById(req.user.id);
+    const post = await Post.findById(req.params.id);
+
     if (!post) {
       return res.status(400).json({ postNotFound: 'Post  not found' });
     }
