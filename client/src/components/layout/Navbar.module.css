@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.navbar_header {
+  background: #fc4a1a;
+  width: 100%;
+  padding: 8px 16px;
+}
+
+.navbar_header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main_header__brand {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.main_nav {
+  display: inline-block;
+  text-align: right;
+  width: calc(100% - 106px);
+  vertical-align: middle;
+}
+
+.main_nav__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main_nav__item {
+  display: inline-block;
+  margin: 0 16px;
+}
+.main_nav__item a {
+  text-decoration: none;
+  color: black;
+}
