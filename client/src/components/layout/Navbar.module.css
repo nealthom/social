@@ -7,10 +7,45 @@ body {
   margin: 0;
 }
 
+.backdrop {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.toggle_button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle_button:focus {
+  outline: none;
+}
+
+.toggle_button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+
 .navbar_header {
   background: #fc4a1a;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 8px 16px;
+  z-index: 100;
 }
 
 .navbar_header > div {
@@ -28,7 +63,7 @@ body {
 .main_nav {
   display: inline-block;
   text-align: right;
-  width: calc(100% - 106px);
+  width: calc(100% - 86px);
   vertical-align: middle;
 }
 
@@ -42,7 +77,44 @@ body {
   display: inline-block;
   margin: 0 16px;
 }
-.main_nav__item a {
+.main_nav__item a,
+.mobile_nav__item a {
   text-decoration: none;
   color: black;
+  font-weight: bold;
+  padding: 3px 0;
+}
+
+.main_nav__item a:hover,
+.main_nav__item a:active {
+  color: white;
+  border-bottom: 5px solid white;
+}
+
+.mobile_nav {
+  display: none;
+  position: fixed;
+  z-index: 201;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
+
+.mobile_nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 10% auto;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile_nav__item {
+  margin: 1rem 0;
+}
+
+.mobile_nav__item a {
+  font-size: 1.5rem;
 }
