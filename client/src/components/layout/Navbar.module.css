@@ -92,7 +92,6 @@ body {
 }
 
 .mobile_nav {
-  display: none;
   position: fixed;
   z-index: 201;
   top: 0;

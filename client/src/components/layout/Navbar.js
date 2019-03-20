@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
 import Styles from './Navbar.module.css';
 export class Navbar extends Component {
+  state = {
+    mobileNav: false
+  };
+  hamburgerClick = () => {
+    this.setState({
+      mobileNav: !this.state.mobileNav
+    });
+  };
   render() {
-    return (
-      <div>
-        <div className={Styles.backdrop} />
+    let mobileNav = '';
+    let backdropNav = '';
+
+    if (this.state.mobileNav === true) {
+      mobileNav = (
         <nav className={Styles.mobile_nav}>
           <ul className={Styles.mobile_nav__items}>
             <li className={Styles.mobile_nav__item}>
@@ -15,9 +25,23 @@ export class Navbar extends Component {
             </li>
           </ul>
         </nav>
+      );
+      backdropNav = (
+        <div className={Styles.backdrop} onClick={this.hamburgerClick} />
+      );
+    }
+
+    return (
+      <div>
+        {mobileNav}
+
         <header className={Styles.navbar_header}>
+          {backdropNav}
           <div>
-            <button className={Styles.toggle_button}>
+            <button
+              onClick={this.hamburgerClick}
+              className={Styles.toggle_button}
+            >
               <span className={Styles.toggle_button__bar} />
               <span className={Styles.toggle_button__bar} />
               <span className={Styles.toggle_button__bar} />
