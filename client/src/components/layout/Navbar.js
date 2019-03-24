@@ -8,6 +8,7 @@ export class Navbar extends Component {
     this.setState({
       mobileNav: !this.state.mobileNav
     });
+    console.log(this.state.mobileNav)
   };
   render() {
     let mobileNav = '';
