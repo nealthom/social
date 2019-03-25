@@ -8,7 +8,7 @@ export class Navbar extends Component {
     this.setState({
       mobileNav: !this.state.mobileNav
     });
-    console.log(this.state.mobileNav)
+    console.log(this.state.mobileNav);
   };
   render() {
     let mobileNav = '';
@@ -35,9 +35,8 @@ export class Navbar extends Component {
     return (
       <div>
         {mobileNav}
-
+        {backdropNav}
         <header className={Styles.navbar_header}>
-          {backdropNav}
           <div>
             <button
               onClick={this.hamburgerClick}

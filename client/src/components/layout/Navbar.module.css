@@ -9,10 +9,10 @@ body {
 
 .backdrop {
   position: absolute;
-  display: none;
-  z-index: 100;
+
+  z-index: 200;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -58,11 +58,8 @@ body {
   font-size: 22px;
 }
 
-.main_nav {
-  display: inline-block;
-  text-align: right;
-  width: calc(100% - 86px);
-  vertical-align: middle;
+.main_nav__items {
+  display: flex;
 }
 
 .main_nav__item {
@@ -72,8 +69,7 @@ body {
 }
 
 .main_nav__item {
-  display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 .main_nav__item a,
 .mobile_nav__item a {
@@ -88,11 +84,8 @@ body {
   color: white;
   border-bottom: 5px solid white;
 }
-
-@media (max-width: 40rem) {
-  .main_nav__items {
-    display: none;
-  }
+.main_nav {
+  display: none;
 }
 
 .mobile_nav {
@@ -109,9 +102,13 @@ body {
   width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile_nav__item {
@@ -120,4 +117,13 @@ body {
 
 .mobile_nav__item a {
   font-size: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .main_nav {
+    display: flex;
+  }
+  .toggle_button {
+    display: none;
+  }
 }
