@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Styles from './Navbar.module.css';
-export class Navbar extends Component {
+class Navbar extends Component {
   state = {
     mobileNav: false
   };
