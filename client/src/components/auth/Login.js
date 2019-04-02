@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import Styles from './Login.module.css';
+import React, { Component } from "react";
+import Styles from "./Login.module.css";
 
 class Login extends Component {
   render() {
     return (
-      <div>
+      <div className={Styles.container}>
         <h1>Login</h1>
       </div>
     );

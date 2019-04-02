@@ -1,0 +1,41 @@
+.container {
+  margin-top: 4rem;
+  background: #d3d3d3;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  padding-top: 1rem;
+}
+
+.register_title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #0091d5;
+}
+.signup_form {
+  padding: 1rem;
+}
+
+.signup_form label {
+  font-weight: bold;
+}
+.signup_form label,
+.signup_form input {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.signup_form button {
+  display: block;
+  margin-top: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .signup_form {
+    margin: auto;
+    width: 25rem;
+  }
+}

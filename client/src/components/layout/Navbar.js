@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import Styles from './Navbar.module.css';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Styles from "./Navbar.module.css";
 class Navbar extends Component {
   state = {
     mobileNav: false
@@ -11,18 +12,18 @@ class Navbar extends Component {
     console.log(this.state.mobileNav);
   };
   render() {
-    let mobileNav = '';
-    let backdropNav = '';
+    let mobileNav = "";
+    let backdropNav = "";
 
     if (this.state.mobileNav === true) {
       mobileNav = (
         <nav className={Styles.mobile_nav}>
           <ul className={Styles.mobile_nav__items}>
             <li className={Styles.mobile_nav__item}>
-              <a href="packages/index.html">Packages</a>
+              <Link to="/">Packages</Link>
             </li>
             <li className={Styles.mobile_nav__item}>
-              <a href="customers/index.html">Customers</a>
+              <Link to="/">Customers</Link>
             </li>
           </ul>
         </nav>
@@ -46,20 +47,20 @@ class Navbar extends Component {
               <span className={Styles.toggle_button__bar} />
               <span className={Styles.toggle_button__bar} />
             </button>
-            <a href="index.html" className={Styles.main_header__brand}>
-              N
-            </a>
+            <Link to="/" className={Styles.main_header__brand}>
+              Neal
+            </Link>
           </div>
           <nav className={Styles.main_nav}>
             <ul className={Styles.main_nav__items}>
               <li className={Styles.main_nav__item}>
-                <a href="profiles.html">Explore Users</a>
+                <Link to="/">Explore Users</Link>
               </li>
               <li className={Styles.main_nav__item}>
-                <a href="register.html">Sign Up</a>
+                <Link to="/register">Sign Up</Link>
               </li>
               <li className={Styles.main_nav__item}>
-                <a href="login.html">Login</a>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </nav>
