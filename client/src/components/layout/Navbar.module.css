@@ -39,7 +39,7 @@ body {
 }
 
 .navbar_header {
-  background: #1c4e80;
+  background: #488a99;
   height: 4rem;
   width: 100%;
   position: fixed;
@@ -75,7 +75,7 @@ body {
 .main_nav__item a,
 .mobile_nav__item a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: bold;
   padding: 3px 0;
 }

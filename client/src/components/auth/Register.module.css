@@ -1,6 +1,6 @@
 .container {
   margin-top: 4rem;
-  background: #d3d3d3;
+  background: #f2f3f5;
   width: 100vw;
   height: 100vh;
 }
@@ -10,12 +10,14 @@
 }
 
 .register_title {
+  margin-bottom: 2rem;
   text-align: center;
   font-size: 1.8rem;
-  color: #0091d5;
+  color: #1c4e80;
 }
 .signup_form {
-  padding: 1rem;
+  padding: 2rem;
+  border: #0091d5 solid 2px;
 }
 
 .signup_form label {
@@ -28,9 +30,50 @@
   width: 100%;
 }
 
+.signup_form input {
+  border: 1px solid #ccc;
+  padding: 0.2rem 0.5rem;
+  font: inherit;
+}
+
+.signup_form input:focus {
+  outline: none;
+  background: #a5d8dd;
+  border-color: #202020;
+}
+
 .signup_form button {
   display: block;
   margin-top: 1rem;
+}
+
+.button {
+  background: #0091d5;
+  color: white;
+  font: inherit;
+  font-weight: bold;
+  border: 1.5px solid white;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+  background: white;
+  color: #0091d5;
+  border: 1.5px solid #0091d5;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
 }
 
 @media (min-width: 40rem) {
