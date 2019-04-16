@@ -8,11 +8,11 @@ class Register extends Component {
         <div className={Styles.main}>
           <h1 className={Styles.register_title}>Register</h1>
           <form action="/" className={Styles.signup_form}>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input type="email" id="email" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" />
-            <label for="password2">Confirm Password</label>
+            <label htmlFor="password2">Confirm Password</label>
             <input type="password" id="password2" />
             <button type="submit" className={Styles.button}>
               Sign Up

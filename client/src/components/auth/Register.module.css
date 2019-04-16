@@ -1,23 +1,28 @@
 .container {
-  margin-top: 4rem;
+  margin: 0;
   background: #f2f3f5;
   width: 100vw;
   height: 100vh;
 }
 
 .main {
-  padding-top: 1rem;
+  grid-row-start: 2;
 }
 
 .register_title {
+  margin-top: 2rem;
+  padding: 2rem;
   margin-bottom: 2rem;
   text-align: center;
   font-size: 1.8rem;
   color: #1c4e80;
 }
 .signup_form {
-  padding: 2rem;
+  padding: 1rem;
   border: #0091d5 solid 2px;
+  display: grid;
+  grid-auto-rows: 2rem;
+  grid-row-gap: 0.5rem;
 }
 
 .signup_form label {
@@ -26,7 +31,6 @@
 .signup_form label,
 .signup_form input {
   display: block;
-  margin-top: 1rem;
   width: 100%;
 }
 
@@ -44,7 +48,6 @@
 
 .signup_form button {
   display: block;
-  margin-top: 1rem;
 }
 
 .button {
@@ -79,6 +82,9 @@
 @media (min-width: 40rem) {
   .signup_form {
     margin: auto;
-    width: 25rem;
+    width: 30rem;
+    grid-template-columns: 10rem auto;
+    grid-row-gap: 1rem;
+    grid-column-gap: 0.5rem;
   }
 }

@@ -1,12 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-}
-
 .overview {
   background-color: #f1f1f1;
   /*background: url('../../images/virus-1812092_1280.jpg') center/cover;*/
